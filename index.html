@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市选择器</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="selector.js"></script>
+    <script type="text/javascript">
+        var config = {
+            province: '#province',
+            city: "#city",
+            area: "#area"
+        };
+        selector(config);
+        $(function () {
+            selector();
+        });
+    </script>
+</head>
+<body>
+省：<select name="province" id="province"></select>
+市：<select name="city" id="city"></select>
+区：<select name="area" id="area"></select>
+</body>
+</html>
