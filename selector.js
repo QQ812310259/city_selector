@@ -26,31 +26,34 @@ function selector(userConfig) {
     area_container.html('').append('<option value="">-- 请选择 --</option>');
 
     // 初始化省份列表
-    for (province in DATA) {
-        province_container.append('<option value="' + province + '">' + province + '</option>');
+    for (i in DATA) {
+        if (DATA[i].pid == 0) {
+            province_container.append('<option value="' + DATA[i].id + '">' + DATA[i].name + '</option>');
+        }
     }
 
     // 省份切换事件
     $(CONFIG.province).on('change', function () {
-        var cur_province = $(this).val();
-        var cities = DATA[cur_province];
+        var province_id = $(this).val();
         // 将市、区初始化
         city_container.html('').append('<option value="">-- 请选择 --</option>');
         area_container.html('').append('<option value="">-- 请选择 --</option>');
-        for (city in cities) {
-            city_container.append('<option value="' + city + '">' + city + '</option>');
+        for (i in DATA) {
+            if (DATA[i].pid == province_id) {
+                city_container.append('<option value="' + DATA[i].id + '">' + DATA[i].name + '</option>');
+            }
         }
     });
 
     // 城市切换事件
     $(CONFIG.city).on('change', function () {
-        var cur_province = $(CONFIG.province).val();
-        var cur_city = $(this).val();
-        var areas = DATA[cur_province][cur_city];
+        var city_id = $(this).val();
         // 将区初始化
         area_container.html('').append('<option value="">-- 请选择 --</option>');
-        for (var i in areas) {
-            area_container.append('<option value="' + areas[i] + '">' + areas[i] + '</option>');
+        for (i in DATA) {
+            if (DATA[i].pid == city_id) {
+                area_container.append('<option value="' + DATA[i].id + '">' + DATA[i].name + '</option>');
+            }
         }
     });
 }
