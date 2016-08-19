@@ -1,6 +1,10 @@
 /**
- * Created by qiaoweizhen on 2016/8/16.
+ * @Author : qiaoweizhen <qiaoweizhen@gmail.com>
+ * @Github : https://www.github.com/qiaoweizhen
+ * @Date   : 2016/8/19
  */
+
+//省市区json对象
 var DATA = [{"id": 1, "code": "110000", "name": "北京市", "pid": 0}, {
     "id": 2,
     "code": "110100",
