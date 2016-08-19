@@ -13,18 +13,18 @@
 ### 配置JS
 
 ```
-//自定义配置
-var config = {
-    province: '#province',
-    city: '#city',
-    area: '#area'
-};
-//使用城市选择器方法
-selector(config);
-//初始化
-$(function () {
-    selector();
-});
+<script type='text/javascript'>
+    //自定义配置
+    var config = {
+        province: '#province',
+        city: '#city',
+        area: '#area'
+    };
+    //初始化
+    $(function () {
+        selector(config);
+    });
+</script>
 ```
 
 ### 使用HTML
